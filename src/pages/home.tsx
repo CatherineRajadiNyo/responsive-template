@@ -7,9 +7,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     order: 0,
     [theme.breakpoints.down('sm')]: {
       order: 1,
-      paddingRight: '0 !important',
-      paddingLeft: '0 !important',
-      margin: '-8px 0',
     },
   },
   green: {
@@ -51,26 +48,21 @@ const Home: FC = () => {
 
   return (
     <Grid item container spacing={2}>
-      <Grid
-        item
-        container
-        xs={12}
-        sm={2}
-        className={classes.sidebarLeftWrapper}
-        spacing={2}
-      >
-        <Grid item xs={6} sm={12}>
-          <Grid className={classes.green} />
-        </Grid>
-        <Grid item xs={6} sm={12}>
-          <Grid className={classes.grey} />
+      <Grid item xs={12} sm={2} className={classes.sidebarLeftWrapper}>
+        <Grid container spacing={2}>
+          <Grid item xs={6} sm={12}>
+            <Grid className={classes.green} />
+          </Grid>
+          <Grid item xs={6} sm={12}>
+            <Grid className={classes.grey} />
+          </Grid>
         </Grid>
       </Grid>
       <Grid item container xs={12} sm={8} className={classes.contentWrapper}>
-        <Grid item className={classes.content} />
+        <Grid item xs={12} className={classes.content} />
       </Grid>
       <Grid item container xs={12} sm={2} className={classes.sidebarRightWrapper}>
-        <Grid item className={classes.sidebarRight} />
+        <Grid item xs={12} className={classes.sidebarRight} />
       </Grid>
     </Grid>
   );
