@@ -15,9 +15,7 @@ const Topbar:FC = () => {
 
   return (
     <Grid container className={classes.topbar} alignItems="center">
-      <Grid item xs={12}>
-        Topbar
-      </Grid>
+      <Grid item xs={12} />
     </Grid>
   );
 };
