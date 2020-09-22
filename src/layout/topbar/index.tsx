@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
+import useTheme from '@material-ui/core/styles/useTheme';
 
-const useStyles = makeStyles(() => createStyles({
-  topbar: {
-    backgroundColor: '#4B5B1D',
-    height: '50px',
-    textAlign: 'center',
-  },
-}));
-
-const Topbar:FC = () => {
+const Topbar: FC = () => {
+  const theming = useTheme();
+  const useStyles = makeStyles(() => createStyles({
+    topbar: {
+      backgroundColor: theming.colors.olivegreen,
+      height: '50px',
+      textAlign: 'center',
+    },
+  }));
   const classes = useStyles();
 
   return (

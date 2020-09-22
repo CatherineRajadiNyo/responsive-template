@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import { ThemeProvider } from '@material-ui/core/styles';
-import Themes from './theme';
+import ThemeProvider1 from './style/themeProvider';
 import Layout from './layout';
 
 const App: FC = () => (
-  <ThemeProvider theme={Themes}>
+  <ThemeProvider1>
     <Layout />
-  </ThemeProvider>
+  </ThemeProvider1>
+
 );
 export default App;

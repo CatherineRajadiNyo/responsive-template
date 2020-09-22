@@ -1,49 +1,52 @@
 import React, { FC } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import useTheme from '@material-ui/core/styles/useTheme';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
-  sidebarLeftWrapper: {
-    order: 0,
-    [theme.breakpoints.down('sm')]: {
-      order: 1,
+const Home: FC = () => {
+  const theming = useTheme();
+
+  const useStyles = makeStyles((theme: Theme) => createStyles({
+    sidebarLeftWrapper: {
+      order: 0,
+      [theme.breakpoints.down('sm')]: {
+        order: 1,
+      },
     },
-  },
-  green: {
-    backgroundColor: theme.colors.green,
-    minHeight: '300px',
-  },
-  grey: {
-    backgroundColor: '#958B73',
-    minHeight: '300px',
-  },
-  contentWrapper: {
-    flexGrow: 1,
-    order: 0,
-    [theme.breakpoints.up('sm')]: {
-      order: 1,
-    },
-  },
-  content: {
-    backgroundColor: '#FFE09F',
-    flexGrow: 1,
-    [theme.breakpoints.down('sm')]: {
+    green: {
+      backgroundColor: theming.colors.green,
       minHeight: '300px',
     },
-  },
-  sidebarRightWrapper: {
-    order: 2,
-  },
-  sidebarRight: {
-    backgroundColor: '#FAD354',
-    flexGrow: 1,
-    [theme.breakpoints.down('sm')]: {
-      minHeight: '600px',
+    grey: {
+      backgroundColor: theming.colors.grey,
+      minHeight: '300px',
     },
-  },
-}));
+    contentWrapper: {
+      flexGrow: 1,
+      order: 0,
+      [theme.breakpoints.up('sm')]: {
+        order: 1,
+      },
+    },
+    content: {
+      backgroundColor: theming.colors.beige,
+      flexGrow: 1,
+      [theme.breakpoints.down('sm')]: {
+        minHeight: '300px',
+      },
+    },
+    sidebarRightWrapper: {
+      order: 2,
+    },
+    sidebarRight: {
+      backgroundColor: theming.colors.yellow,
+      flexGrow: 1,
+      [theme.breakpoints.down('sm')]: {
+        minHeight: '600px',
+      },
+    },
+  }));
 
-const Home: FC = () => {
   const classes = useStyles();
 
   return (
